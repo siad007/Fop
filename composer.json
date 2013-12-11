@@ -1,0 +1,19 @@
+{
+	"name" : "Fop",
+	"description" : "Wrapper class for using fop with a fluend interface.",
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Siad Ardroumli",
+			"email" : "siad.ardroumli@idealo.de"
+		}
+	],
+	"autoload" : {
+		"psr-0" : {
+			"siad007" : "src"
+		}
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~3.7"
+	}
+}
