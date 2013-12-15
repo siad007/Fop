@@ -25,7 +25,7 @@ class Options
         return $this->quiet;
     }
 
-    public function setVerbose($quiet)
+    public function setQuiet($quiet)
     {
         $this->verbose = $quiet;
 
