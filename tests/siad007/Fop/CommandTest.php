@@ -23,7 +23,9 @@ class CommandTest extends TestCase
 
     protected function tearDown()
     {
-        unlink(__DIR__ . '/../_files/test.pdf');
+        if (is_file(__DIR__ . '/../_files/test.pdf')) {
+            unlink(__DIR__ . '/../_files/test.pdf');
+        }
     }
 
     /**
@@ -37,5 +39,15 @@ class CommandTest extends TestCase
             __DIR__ . '/../_files/test.pdf',
             'Couldn\'t generate PDF.'
         );
+    }
+
+    /**
+     * @test
+     */
+    public function commandSyntax()
+    {
+        $cmd = (string) $this->command;
+
+        $this->assertStringEndsWith('_files/test.pdf', $cmd);
     }
 }
