@@ -1,10 +1,28 @@
 <?php
+/**
+ * Fop - Wrapper class for using fop with a fluend interface.
+ *
+ * PHP Version 5.3
+ *
+ * @copyright Siad Ardroumli
+ * @license http://www.opensource.org/licenses/mit-license.php MIT
+ * @link https://github.com/siad007/Fop
+ */
 
 namespace siad007\Fop;
 
+/**
+ * Argument representation of a FOP command.
+ *
+ * @author siad.ardroumli <siad.ardroumli@idealo.de>
+ */
 class Arguments implements \ArrayAccess
 {
-
+    /**
+     * Arguments.
+     *
+     * @var array
+     */
     protected $arguments = array(
         'fo' => '',
         'xml' => '',
@@ -13,6 +31,7 @@ class Arguments implements \ArrayAccess
     );
 
     /**
+     * Is argument fo set?
      *
      * @return boolean
      */
@@ -22,6 +41,7 @@ class Arguments implements \ArrayAccess
     }
 
     /**
+     * Is xml/xsl file set?
      *
      * @return boolean
      */
@@ -31,6 +51,8 @@ class Arguments implements \ArrayAccess
     }
 
     /**
+     * {@inheritdoc}
+     *
      * @codeCoverageIgnore
      */
     public function offsetSet($offset, $value)
@@ -43,6 +65,8 @@ class Arguments implements \ArrayAccess
     }
 
     /**
+     * {@inheritdoc}
+     *
      * @codeCoverageIgnore
      */
     public function offsetExists($offset)
@@ -51,6 +75,8 @@ class Arguments implements \ArrayAccess
     }
 
     /**
+     * {@inheritdoc}
+     *
      * @codeCoverageIgnore
      */
     public function offsetUnset($offset)
@@ -59,6 +85,8 @@ class Arguments implements \ArrayAccess
     }
 
     /**
+     * {@inheritdoc}
+     *
      * @codeCoverageIgnore
      */
     public function offsetGet($offset)

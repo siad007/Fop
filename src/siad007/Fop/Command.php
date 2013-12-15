@@ -80,9 +80,9 @@ class Command
     public function __toString()
     {
         if ($this->args->hasArgumentFo()) {
-            $cmd = sprintf('fop -fo %s -pdf %s', $this->args['fo'], $this->args['pdf']);
+            $cmd = sprintf('fop %s -fo %s -pdf %s', (string) $this->opts, $this->args['fo'], $this->args['pdf']);
         } elseif ($this->args->hasXmlInputFiles()) {
-            $cmd = sprintf('fop -xml %s -xls %s -pdf %s', $this->args['xml'], $this->args['xsl'], $this->args['pdf']);
+            $cmd = sprintf('fop %s -xml %s -xls %s -pdf %s', (string) $this->opts, $this->args['xml'], $this->args['xsl'], $this->args['pdf']);
         } else {
             throw new \InvalidArgumentException('Please specify a fo file or xml/xsl files.');
         }
