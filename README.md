@@ -12,7 +12,7 @@ use siad007\Fop\Arguments as Args;
 use siad007\Fop\Options as Opts;
 
 $args = new Args();
-$args[] = __DIR__ . '/../data/test.fo';
+$args['fo']  = __DIR__ . '/../data/test.fo';
 $args['pdf'] = __DIR__ . '/../output/test.pdf'
 
 $opts = new Opts();
