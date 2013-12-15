@@ -2,32 +2,68 @@
 
 namespace siad007\Fop;
 
-class Fop extends Options
+class Fop
 {
     /**
-     * @var array
+     * @var Arguments
      */
-    protected $args = array(
-        'fo'  => '',
-        'xml' => '',
-        'xsl' => '',
-        'pdf' => 'document.pdf'
-    );
+    protected $args = null;
+
+    /**
+     * @var Options
+     */
+    protected $opts = null;
 
     /**
      * @param string $args
+     * @param string $opts optional: default null
      */
-    public function __construct($args = null)
+    public function __construct(Arguments $args, Options $opts = null)
     {
-        if ($args !== null) {
+        if ($this->args === null) {
             $this->args = $args;
+        }
+
+        if ($opts !== null) {
+            $this->opts = $opts;
         }
     }
 
+    public function generatePdf()
+    {
+        exec(escapeshellcmd((string) $this));
+    }
+
+    public function getArguments()
+    {
+        return $this->args;
+    }
+
+    public function setArguments(Arguments $args)
+    {
+        $this->args = $args;
+
+        return $this;
+    }
+
+    public function getOptions()
+    {
+        return $this->opts;
+    }
+
+    public function setOptions(Options $opts)
+    {
+        $this->opts = $opts;
+
+        return $this;
+    }
+
     /**
+     * @return string
+     *
      * @throws \InvalidArgumentException
      */
-    public function generatePdf()
+    public function __toString()
     {
         if ($this->hasArgumentFo()) {
             $cmd = sprintf(
@@ -48,22 +84,6 @@ class Fop extends Options
             );
         }
 
-        exec(escapeshellcmd($cmd));
-    }
-
-    /**
-     * @return boolean
-     */
-    protected function hasArgumentFo()
-    {
-        return !empty($this->args['fo']);
-    }
-
-    /**
-     * @return boolean
-     */
-    protected function hasXmlInputFiles()
-    {
-        return !empty($this->args['xml']) && !empty($this->args['xsl']);
+        return $cmd;
     }
 }
