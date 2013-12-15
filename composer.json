@@ -10,7 +10,7 @@
 	],
 	"autoload" : {
 		"psr-0" : {
-			"siad007" : "src"
+			"" : ["src/", "tests/"]
 		}
 	},
 	"require-dev" : {

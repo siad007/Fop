@@ -2,7 +2,7 @@
 
 namespace siad007\Fop;
 
-class Fop
+class Command
 {
     /**
      * @var Arguments
@@ -65,13 +65,13 @@ class Fop
      */
     public function __toString()
     {
-        if ($this->hasArgumentFo()) {
+        if ($this->args->hasArgumentFo()) {
             $cmd = sprintf(
                 'fop -fo %s -pdf %s',
                 $this->args['fo'],
                 $this->args['pdf']
             );
-        } elseif ($this->hasXmlInputFiles()) {
+        } elseif ($this->args->hasXmlInputFiles()) {
             $cmd = sprintf(
                 'fop -xml %s -xls %s -pdf %s',
                 $this->args['xml'],
