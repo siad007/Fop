@@ -5,7 +5,7 @@ namespace siad007\Fop\Tests;
 use \PHPUnit_Framework_TestCase as TestCase;
 use siad007\Fop\Options;
 
-class ArgumentsTest extends TestCase
+class OptionsTest extends TestCase
 {
     /**
      * @var Options
