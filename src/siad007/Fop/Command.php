@@ -1,22 +1,35 @@
 <?php
+/**
+ * Fop - Wrapper class for using fop with a fluend interface.
+ *
+ * PHP Version 5.3
+ *
+ * @copyright Siad Ardroumli
+ * @license http://www.opensource.org/licenses/mit-license.php MIT
+ * @link https://github.com/siad007/Fop
+ */
 
 namespace siad007\Fop;
 
 class Command
 {
     /**
+     *
      * @var Arguments
      */
     protected $args = null;
 
     /**
+     *
      * @var Options
      */
     protected $opts = null;
 
     /**
+     *
      * @param string $args
-     * @param string $opts optional: default null
+     * @param string $opts
+     *            optional: default null
      */
     public function __construct(Arguments $args, Options $opts = null)
     {
@@ -66,22 +79,11 @@ class Command
     public function __toString()
     {
         if ($this->args->hasArgumentFo()) {
-            $cmd = sprintf(
-                'fop -fo %s -pdf %s',
-                $this->args['fo'],
-                $this->args['pdf']
-            );
+            $cmd = sprintf('fop -fo %s -pdf %s', $this->args['fo'], $this->args['pdf']);
         } elseif ($this->args->hasXmlInputFiles()) {
-            $cmd = sprintf(
-                'fop -xml %s -xls %s -pdf %s',
-                $this->args['xml'],
-                $this->args['xsl'],
-                $this->args['pdf']
-            );
+            $cmd = sprintf('fop -xml %s -xls %s -pdf %s', $this->args['xml'], $this->args['xsl'], $this->args['pdf']);
         } else {
-            throw new \InvalidArgumentException(
-                'Please specify a fo file or xml/xsl files.'
-            );
+            throw new \InvalidArgumentException('Please specify a fo file or xml/xsl files.');
         }
 
         return $cmd;
