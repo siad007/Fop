@@ -29,6 +29,8 @@ class ArgumentsTest extends TestCase
      */
     public function readingArguments()
     {
+        $this->assertTrue($this->args->hasArgumentFo());
+        $this->assertFalse($this->args->hasXmlInputFiles());
         $this->assertStringEndsWith('/../_files/test.fo', $this->args['fo']);
         $this->assertStringEndsWith('/../_files/test.pdf', $this->args['pdf']);
     }
