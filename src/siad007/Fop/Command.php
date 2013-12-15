@@ -26,6 +26,7 @@ class Command
     protected $opts = null;
 
     /**
+     * Standard constructor.
      *
      * @param string $args
      * @param string $opts
