@@ -1,5 +1,5 @@
 {
-	"name" : "Fop",
+	"name" : "siad007/Fop",
 	"description" : "Wrapper class for using fop with a fluend interface.",
 	"type" : "library",
 	"license" : "MIT",
@@ -10,10 +10,10 @@
 	],
 	"autoload" : {
 		"psr-0" : {
-			"" : ["src/", "tests/"]
+			"siad007" : "src"
 		}
 	},
 	"require-dev" : {
-		"satooshi/php-coveralls": "dev-master"
+		"phpunit/phpunit" : "~3.7"
 	}
 }
