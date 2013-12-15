@@ -1,5 +1,5 @@
 {
-	"name" : "siad007/Fop",
+	"name" : "siad007/fop",
 	"description" : "Wrapper class for using fop with a fluend interface.",
 	"type" : "library",
 	"license" : "MIT",
