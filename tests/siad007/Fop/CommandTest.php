@@ -53,4 +53,19 @@ class CommandTest extends TestCase
 
         $this->assertStringEndsWith('_files/test.pdf', $cmd);
     }
+
+    /**
+     * @test
+     */
+    public function options()
+    {
+        $opts = new Options();
+        $opts->setQuiet(true)->setVerbose(true);
+
+        $this->command->setOptions($opts);
+        $actual = $this->command->getOptions();
+
+        $this->assertTrue($actual->isQuiet());
+        $this->assertTrue($actual->isVerbose());
+    }
 }
