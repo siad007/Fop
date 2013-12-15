@@ -18,5 +18,6 @@ $args['pdf'] = __DIR__ . '/../output/test.pdf'
 $opts = new Opts();
 $opts->setQuiet(true);
 
-new Fop($args, $opts);
+$fop = new Fop($args, $opts);
+$fop->generatePdf();
 ```
