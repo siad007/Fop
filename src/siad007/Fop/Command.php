@@ -28,8 +28,8 @@ class Command
     /**
      * Standard constructor.
      *
-     * @param string $args
-     * @param string $opts
+     * @param Arguments $args
+     * @param Options $opts
      *            optional: default null
      */
     public function __construct(Arguments $args, Options $opts = null)
