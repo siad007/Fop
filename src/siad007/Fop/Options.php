@@ -33,6 +33,13 @@ class Options
     protected $quiet = false;
 
     /**
+     * Relaxed/less strict validation (where available).
+     *
+     * @var boolean
+     */
+    protected $relaxedValidation = false;
+
+    /**
      * Stringify command options.
      *
      * @return string
@@ -47,6 +54,10 @@ class Options
 
         if ($this->quiet) {
             $optString .= '-q ';
+        }
+
+        if ($this->relaxedValidation) {
+            $optString .= '-r ';
         }
 
         $optString = rtrim($optString, ' ');
@@ -98,6 +109,30 @@ class Options
     public function setQuiet($quiet)
     {
         $this->quiet = (boolean) $quiet;
+
+        return $this;
+    }
+
+    /**
+     * Relaxed/less strict validation enabled?
+     *
+     * @return boolean
+     */
+    public function hasRelaxedValidation()
+    {
+        return $this->relaxedValidation;
+    }
+
+    /**
+     * Set relaxed/less strict validation mode.
+     *
+     * @param boolean $relaxedValidation
+     *
+     * @return \siad007\Fop\Options
+     */
+    public function setRelaxedValidation($relaxedValidation)
+    {
+        $this->relaxedValidation = (boolean) $relaxedValidation;
 
         return $this;
     }

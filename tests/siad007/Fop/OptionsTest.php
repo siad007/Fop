@@ -29,8 +29,10 @@ class OptionsTest extends TestCase
     {
         $this->assertFalse($this->opts->isVerbose());
         $this->assertFalse($this->opts->isQuiet());
+        $this->assertFalse($this->opts->hasRelaxedValidation());
         $this->assertTrue($this->opts->setQuiet(true)->isQuiet());
         $this->assertTrue($this->opts->setVerbose(true)->isVerbose());
-        $this->assertStringMatchesFormat('-v -q', $this->opts->__toString());
+        $this->assertTrue($this->opts->setRelaxedValidation(true)->hasRelaxedValidation());
+        $this->assertStringMatchesFormat('-v -q -r', $this->opts->__toString());
     }
 }
