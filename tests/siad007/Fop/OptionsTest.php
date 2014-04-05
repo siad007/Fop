@@ -31,5 +31,6 @@ class OptionsTest extends TestCase
         $this->assertFalse($this->opts->isQuiet());
         $this->assertTrue($this->opts->setQuiet(true)->isQuiet());
         $this->assertTrue($this->opts->setVerbose(true)->isVerbose());
+        $this->assertStringMatchesFormat('-q -v', $this->opts->__toString());
     }
 }
