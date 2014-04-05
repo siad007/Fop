@@ -49,6 +49,20 @@ class CommandTest extends TestCase
     /**
      * @test
      */
+    public function argumentHandling()
+    {
+        $args = new Arguments();
+        $args['pdf'] = __DIR__ . '/../_files/test.pdf';
+        $args['fo'] = __DIR__ . '/../_files/test.fo';
+
+        $this->command->setArguments($args);
+
+        $this->assertInstanceOf('\siad007\Fop\Arguments', $this->command->getArguments());
+    }
+
+    /**
+     * @test
+     */
     public function commandSyntax()
     {
         $cmd = (string) $this->command;
