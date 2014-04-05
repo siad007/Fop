@@ -68,4 +68,16 @@ class CommandTest extends TestCase
         $this->assertTrue($actual->isQuiet());
         $this->assertTrue($actual->isVerbose());
     }
+
+    /**
+     * @test
+     * @expectedException \InvalidArgumentException
+     */
+    public function instantiationWithoutArguments()
+    {
+        $args = new Arguments();
+        $args['pdf'] = __DIR__ . '/../_files/test.pdf';
+
+        new Command($args, $opts);
+    }
 }
