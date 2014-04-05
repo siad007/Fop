@@ -37,7 +37,7 @@ class Arguments implements \ArrayAccess
      */
     public function hasArgumentFo()
     {
-        return ! empty($this['fo']);
+        return $this['fo'] !== '';
     }
 
     /**
@@ -47,7 +47,7 @@ class Arguments implements \ArrayAccess
      */
     public function hasXmlInputFiles()
     {
-        return ! empty($this['xml']) && ! empty($this['xsl']);
+        return $this['xml'] !== '' && $this['xsl'] !== '';
     }
 
     /**

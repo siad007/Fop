@@ -29,6 +29,8 @@ class CommandTest extends TestCase
         if (is_file(__DIR__ . '/../_files/test.pdf')) {
             unlink(__DIR__ . '/../_files/test.pdf');
         }
+
+        $this->command = null;
     }
 
     /**
@@ -78,6 +80,7 @@ class CommandTest extends TestCase
         $args = new Arguments();
         $args['pdf'] = __DIR__ . '/../_files/test.pdf';
 
-        new Command($args);
+        $cmd = new Command($args);
+        $cmd->__toString();
     }
 }
