@@ -12,8 +12,5 @@
 		"psr-0" : {
 			"" : ["src/", "tests/"]
 		}
-	},
-	"require-dev" : {
-		"satooshi/php-coveralls": "dev-master"
 	}
 }
