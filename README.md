@@ -3,7 +3,7 @@ Fop
 
 Wrapper class for using fop with a fluend interface.
 
-[![Build Status](https://travis-ci.org/siad007/Fop.png?branch=master)](https://travis-ci.org/siad007/Fop)[![Coverage Status](https://coveralls.io/repos/siad007/Fop/badge.png?branch=master)](https://coveralls.io/r/siad007/Fop?branch=master)
+[![Build Status](https://travis-ci.org/siad007/Fop.png?branch=master)](https://travis-ci.org/siad007/Fop)[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/siad007/Fop/badges/quality-score.png?s=58fad0e4e15cab2bda4e29d0d7c166f26d33f4c0)](https://scrutinizer-ci.com/g/siad007/Fop/)[![Code Coverage](https://scrutinizer-ci.com/g/siad007/Fop/badges/coverage.png?s=e80a7752ea39d75e0546103cfc5396f8d0f3b0dd)](https://scrutinizer-ci.com/g/siad007/Fop/)
 
 Example usage:
 ```
