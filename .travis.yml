@@ -12,13 +12,16 @@ before_script:
  - sudo apt-get -qq install libservlet2.4-java > /dev/null
  - phpenv rehash > /dev/null
  - composer selfupdate --quiet
- - composer install --dev --prefer-source
- - composer update --dev --prefer-source
+ - composer install -n --dev --prefer-source
  - mkdir -p build/logs
 
 script:
   - phpunit --coverage-clover build/logs/clover.xml
 
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+
 notifications:
   email:
-    - siad.ardroumli@idealo.de
+    - siad.ardroumli@gmail.com
