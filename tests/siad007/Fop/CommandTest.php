@@ -68,6 +68,13 @@ class CommandTest extends TestCase
         $cmd = (string) $this->command;
 
         $this->assertStringEndsWith('_files/test.pdf', $cmd);
+
+        $args = new Arguments();
+        $args['pdf'] = __DIR__ . '/../_files/test.pdf';
+        $args['xsl'] = __DIR__ . '/../_files/test.xsl';
+        $args['xml'] = __DIR__ . '/../_files/test.xml';
+
+        $this->assertStringEndsWith('_files/test.pdf', (string) $this->command->setArguments($args));
     }
 
     /**
