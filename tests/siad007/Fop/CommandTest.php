@@ -78,6 +78,6 @@ class CommandTest extends TestCase
         $args = new Arguments();
         $args['pdf'] = __DIR__ . '/../_files/test.pdf';
 
-        new Command($args, $opts);
+        new Command($args);
     }
 }
